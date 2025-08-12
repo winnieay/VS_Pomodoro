@@ -4,7 +4,7 @@ let timerInterval;
 let remainingSeconds;
 let statusBarItem;
 let isWorkSession = true;
-const WORK_DURATION = 0.5 * 60; // 25 minutes
+const WORK_DURATION = 0.3 * 60; // 25 minutes
 const BREAK_DURATION = 0.1 * 60;  // 5 minutes
 
 /**
@@ -92,11 +92,11 @@ function getWebviewContent(title, message, audioUri) {
             </style>
         </head>
         <body>
-            
+            <audio autoplay>
+                <source src="${audioUri}" type="audio/wav" />
+            </audio>
             <h1>${title}</h1>
             <p>${message}</p>
-			<audio id="audio" src="${audioUri}" preload="auto"></audio>
-            <button onclick="document.getElementById('audio').play()">Play Sound</button>
         </body>
         </html>
     `;
