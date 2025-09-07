@@ -41,6 +41,6 @@ Break
 ![gif_for_command](images/pomodoro_command.gif)
 
 ## Release Notes
-##### Version 0.0.9
+##### Version 1.0.0
 - Initial release with auto-cycling Pomodoro
 - Sound notification and Webview-based notification
