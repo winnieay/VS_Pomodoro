@@ -12,15 +12,17 @@ A simple, auto-cycling Pomodoro timer integrated into VS Code.
 ## Outputs
 ##### Timer displayed in Status Bar
 **Start Pomodoro**
-![imge_start](images/pomodoro_start.png)
+![imge_start](images/pomodoro_start.png)  
 
 **Stop Pomodoro**
-![imge_stop](images/pomodoro_stopped.png)
+![imge_stop](images/pomodoro_stopped.png)  
 
 ##### Webview-based Notification
-| Pomodoro Cycle Start | Break |
-| -------------| ------------- |
-|![imge_break_noti](images/pomodoro_noti_break.png)|![imge_start_noti](images/pomodoro_noti_start.png)|
+Pomodoro Cycle Start  
+![imge_break_noti](images/pomodoro_noti_break.png)  
+Break  
+![imge_start_noti](images/pomodoro_noti_start.png)|
+
 
 
 ## Usage
