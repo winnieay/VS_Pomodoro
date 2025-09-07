@@ -1,65 +1,44 @@
-# pomodoro-technique README
+# Pomodoro Timer for VS Code
 
-This is the README for your extension "pomodoro-technique". After writing up a brief description, we recommend including the following sections.
+A simple, auto-cycling Pomodoro timer integrated into VS Code.
 
 ## Features
+- 25-minute focus sessions followed by 5-minute breaks
+- Auto start next Pomodoro cycle after break
+- Timer displayed in Status Bar
+- Webview-based notification in new tab (Auto close after 5 seconds)
+- Sound alerts (Will blocked by Autoplay Policy)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Outputs
+##### Timer displayed in Status Bar
+**Start Pomodoro**
+![imge_start](images/pomodoro_start.png)
 
-For example if there is an image subfolder under your extension project workspace:
+**Stop Pomodoro**
+![imge_stop](images/pomodoro_stopped.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+##### Webview-based Notification
+| Pomodoro Cycle Start | Break |
+| -------------| ------------- |
+|![imge_break_noti](images/pomodoro_noti_break.png)|![imge_start_noti](images/pomodoro_noti_start.png)|
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+## Usage
+1. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+2. Search for [Command]. For example, `Pomodoro:Start`
+3. Work until the timer alerts you
+4. Take a break and get ready for the next cycle
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Commands
+| Command  | Description |
+| -------------| ------------- |
+| **pomodoro.start**  | Starts a Pomodoro cycle  |
+| **pomodoro.stop**  | Stops timer |
+| **pomodoro.reset**  | Reset timer |
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+![gif_for_command](images/pomodoro_command.gif)
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+##### Version 0.0.9
+- Initial release with auto-cycling Pomodoro
+- Sound notification and Webview-based notification

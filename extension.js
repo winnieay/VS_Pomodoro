@@ -4,8 +4,8 @@ let timerInterval;
 let remainingSeconds;
 let statusBarItem;
 let isWorkSession = true;
-const WORK_DURATION = 0.3 * 60; // 25 minutes
-const BREAK_DURATION = 0.1 * 60;  // 5 minutes
+const WORK_DURATION = 25 * 60; // 25 minutes
+const BREAK_DURATION = 5 * 60;  // 5 minutes
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -23,7 +23,12 @@ function activate(context) {
         stopPomodoro();
     });
 
-    context.subscriptions.push(startCommand, stopCommand, statusBarItem);
+    let resetCommand = vscode.commands.registerCommand('pomodoro.reset', () => {
+        resetPomodoro(context);
+    });
+
+    context.subscriptions.push(startCommand, stopCommand, resetCommand, statusBarItem);
+
 }
 
 function startPomodoro(context) {
@@ -51,7 +56,7 @@ function startSession(context) {
 
             // Switch mode and start next session
             isWorkSession = !isWorkSession;
-            setTimeout(() => startSession(context), 3000); // 3s delay before next session
+            setTimeout(() => startSession(context), 5000); // 3s delay before next session
         }
     }, 1000);
 }
@@ -112,8 +117,28 @@ function updateStatusBar() {
 
 function stopPomodoro() {
     clearInterval(timerInterval);
-    statusBarItem.text = `$(clock) Pomodoro stopped`;
+    statusBarItem.text = `$(debug-pause) Pomodoro stopped`;
 }
+
+
+function resetPomodoro(context) {
+    clearInterval(timerInterval);
+
+    remainingSeconds = isWorkSession ? WORK_DURATION : BREAK_DURATION;
+    updateStatusBar();
+
+    // Show reset notification in a webview
+    const mode = isWorkSession ? "Work Session" : "Break Session";
+    showWebview(
+        context,
+        "⏱ Timer Reset",
+        `The ${mode} timer has been reset to ${Math.floor(remainingSeconds / 60)} minutes.`
+    );
+
+    startSession(context); // Start again from beginning
+
+}
+
 
 function deactivate() {
     clearInterval(timerInterval);

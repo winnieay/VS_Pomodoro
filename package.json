@@ -2,24 +2,34 @@
   "name": "pomodoro-technique",
   "displayName": "Pomodoro Technique",
   "description": "The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a kitchen timer to break work into intervals, typically 25 minutes in length, separated by short breaks.",
-  "version": "0.0.1",
+  "version": "0.0.9",
+  "icon": "images/icon.png",
+  "publisher": "WinnieAUYEUNG",
   "engines": {
-    "vscode": "^1.103.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Other"
   ],
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/winnieay/VS_Pomodoro.git"
+  },
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
     "commands": [
         {
             "command": "pomodoro.start",
-            "title": "Pomodoro: Start"
+            "title": "Pomodoro:Start"
         },
         {
             "command": "pomodoro.stop",
-            "title": "Pomodoro: Stop"
+            "title": "Pomodoro:Stop"
+        },
+        {
+            "command": "pomodoro.reset",
+            "title": "Pomodoro:Reset"
         }
   ]
   },
@@ -29,7 +39,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
+    "@types/vscode": "^1.75.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
     "eslint": "^9.32.0",
